@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bu4xa3cvnkeqw"]
+
+[ext_resource type="FontFile" uid="uid://b1lsl853cvelt" path="res://motywy/fonciaki/AmaticSC-Bold.ttf" id="1_dhgew"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m2ul6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5cev"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5b0gs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ep6kq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vso3y"]
+
+[resource]
+default_font = ExtResource("1_dhgew")
+default_font_size = 24
+Button/colors/font_color = Color(0.87451, 0.87451, 0.87451, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_m2ul6")
+Button/styles/focus = SubResource("StyleBoxEmpty_h5cev")
+Button/styles/hover = SubResource("StyleBoxEmpty_5b0gs")
+Button/styles/normal = SubResource("StyleBoxEmpty_ep6kq")
+Button/styles/pressed = SubResource("StyleBoxEmpty_vso3y")

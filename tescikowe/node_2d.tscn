@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0vuc1vvfqh2"]
+
+[ext_resource type="PackedScene" uid="uid://b0nkphe2i2x34" path="res://poziomson/dropzone/marker_2d.tscn" id="1_rtxu8"]
+[ext_resource type="PackedScene" uid="uid://dems52w8redl7" path="res://poziomson/scena/node_2d.tscn" id="2_gnkaf"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Marker2D" parent="." instance=ExtResource("1_rtxu8")]
+position = Vector2(164, 107)
+
+[node name="Marker2D2" parent="." instance=ExtResource("1_rtxu8")]
+position = Vector2(380, 118)
+
+[node name="Node2D" parent="." instance=ExtResource("2_gnkaf")]
+position = Vector2(80, 117)
+
+[node name="Node2D2" parent="." instance=ExtResource("2_gnkaf")]
+position = Vector2(367, 116)
+
+[node name="Marker2D3" parent="." instance=ExtResource("1_rtxu8")]
+position = Vector2(424, 290)
+
+[node name="Marker2D4" parent="." instance=ExtResource("1_rtxu8")]
+position = Vector2(161, 279)

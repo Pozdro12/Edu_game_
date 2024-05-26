@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dinvgnq25p6mk"]
+
+[ext_resource type="Texture2D" uid="uid://dnoj6w7dvdl2i" path="res://placeholdery/poziom2.png" id="1_1l07s"]
+[ext_resource type="Script" path="res://poziom2/node.gd" id="1_r0fiv"]
+[ext_resource type="FontFile" uid="uid://bndi2jog1m31o" path="res://motywy/fonciaki/Chalkboard-Regular.ttf" id="3_lnp47"]
+
+[sub_resource type="Theme" id="Theme_oa6vn"]
+default_font = ExtResource("3_lnp47")
+default_font_size = 144
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_r0fiv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324.5)
+scale = Vector2(0.6, 0.599074)
+texture = ExtResource("1_1l07s")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 230.0
+offset_top = 143.0
+offset_right = 376.0
+offset_bottom = 283.0
+theme = SubResource("Theme_oa6vn")
+horizontal_alignment = 1
+vertical_alignment = 1
