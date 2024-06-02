@@ -1,19 +1,14 @@
 extends Control
 
-
+@export var animacja1 : animacja
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	
+	animacja1.ktora_anim(false)
+	await get_tree().create_timer(1.0).timeout
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
-
-func _on_button_pressed():
-	get_tree().change_scene_to_file("res://menusy/wybor tematu.tscn")
-
-
-func _on_button_2_pressed():
-	get_tree().reload_current_scene()

@@ -1,0 +1,157 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgymyvd5rctfj"]
+
+[ext_resource type="Script" path="res://NinePatchRect.gd" id="1_ay8tp"]
+[ext_resource type="Script" path="res://A.gd" id="2_gu0gs"]
+
+[sub_resource type="GDScript" id="GDScript_gdl7k"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text=\"Score \"+str(Random.score)
+"
+
+[sub_resource type="GDScript" id="GDScript_xg4ev"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text=\"Question number: \"+str(Random.counter)
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.992157, 0.819608, 1)
+
+[node name="2" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.5
+offset_top = -174.0
+offset_right = 255.5
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ay8tp")
+
+[node name="a" type="Button" parent="2"]
+layout_mode = 0
+offset_left = 263.5
+offset_top = 322.0
+offset_right = 434.5
+offset_bottom = 381.0
+text = "a"
+
+[node name="b" type="Button" parent="2"]
+layout_mode = 0
+offset_left = 463.5
+offset_top = 322.0
+offset_right = 634.5
+offset_bottom = 381.0
+text = "b"
+
+[node name="c" type="Button" parent="2"]
+layout_mode = 0
+offset_left = -176.5
+offset_top = 322.0
+offset_right = 7.5
+offset_bottom = 381.0
+text = "c"
+
+[node name="d" type="Button" parent="2"]
+layout_mode = 0
+offset_left = 39.5
+offset_top = 322.0
+offset_right = 223.5
+offset_bottom = 381.0
+text = "d"
+
+[node name="A" type="Label" parent="2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -66.5
+offset_right = 176.0
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+script = ExtResource("2_gu0gs")
+
+[node name="B" type="Label" parent="2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -204.0
+offset_right = 176.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+script = ExtResource("2_gu0gs")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="2"]
+
+[node name="Score" type="Label" parent="2/CanvasLayer"]
+offset_left = 112.0
+offset_top = 120.0
+offset_right = 208.0
+offset_bottom = 176.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Score"
+script = SubResource("GDScript_gdl7k")
+
+[node name="Counter" type="Label" parent="2/CanvasLayer"]
+offset_left = 400.0
+offset_top = 32.0
+offset_right = 672.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Question number: "
+script = SubResource("GDScript_xg4ev")
+
+[connection signal="pressed" from="2/a" to="2" method="_on_a_pressed"]
+[connection signal="pressed" from="2/b" to="2" method="_on_b_pressed"]
+[connection signal="pressed" from="2/c" to="2" method="_on_c_pressed"]
+[connection signal="pressed" from="2/d" to="2" method="_on_d_pressed"]

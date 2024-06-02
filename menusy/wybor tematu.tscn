@@ -1,0 +1,183 @@
+[gd_scene load_steps=11 format=3 uid="uid://bewlsa7i7v0ge"]
+
+[ext_resource type="Script" path="res://menusy/wybor tematu.gd" id="1_vo54q"]
+[ext_resource type="Texture2D" uid="uid://dg8r6te8y0mhe" path="res://buttons-20240602T142656Z-001/backround/Subject_menu.png" id="2_5cilt"]
+[ext_resource type="PackedScene" uid="uid://y7yrfxq5pcf" path="res://menusy/animacja.tscn" id="3_e8xmd"]
+[ext_resource type="Texture2D" uid="uid://bec3tbn3mp80h" path="res://menusy/buttonson.png" id="3_nmqgv"]
+[ext_resource type="Script" path="res://menusy/TextureButton.gd" id="4_qeel0"]
+[ext_resource type="Texture2D" uid="uid://de4grf065f3h8" path="res://buttons-20240602T142656Z-001/buttons/guzikson_subj.png" id="6_dh54b"]
+[ext_resource type="Script" path="res://menusy/Button2.gd" id="6_u04j2"]
+[ext_resource type="FontFile" uid="uid://bndi2jog1m31o" path="res://motywy/fonciaki/Chalkboard-Regular.ttf" id="7_hbuy0"]
+[ext_resource type="Script" path="res://menusy/Button.gd" id="8_meebf"]
+[ext_resource type="Script" path="res://menusy/Button3.gd" id="9_8yg5v"]
+
+[node name="WyborTematu" type="Control" node_paths=PackedStringArray("animacja1")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vo54q")
+animacja1 = NodePath("anim")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.2868, 17.4199)
+texture = ExtResource("2_5cilt")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 40.0
+offset_top = 108.0
+offset_right = 380.0
+offset_bottom = 194.0
+scale = Vector2(0.849803, 0.779342)
+texture_normal = ExtResource("3_nmqgv")
+script = ExtResource("4_qeel0")
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = 397.739
+offset_top = 61.5904
+offset_right = 569.739
+offset_bottom = 84.5904
+scale = Vector2(0.390966, 0.680224)
+text = "pozdreki dla wariatow"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 23.0
+offset_right = 1967.0
+offset_bottom = 1231.0
+scale = Vector2(0.208198, 0.0661967)
+icon = ExtResource("6_dh54b")
+script = ExtResource("6_u04j2")
+
+[node name="Label" type="Label" parent="Button2"]
+layout_mode = 0
+offset_left = 93.6027
+offset_top = 115.869
+offset_right = 2933.6
+offset_bottom = 464.869
+scale = Vector2(0.740561, 4.85486)
+theme_override_fonts/font = ExtResource("7_hbuy0")
+theme_override_font_sizes/font_size = 256
+text = "Fill in missing numbers"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 107.0
+offset_right = 1967.0
+offset_bottom = 1315.0
+scale = Vector2(0.208198, 0.0661967)
+icon = ExtResource("6_dh54b")
+script = ExtResource("8_meebf")
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 57.6376
+offset_top = 166.171
+offset_right = 2324.64
+offset_bottom = 399.171
+scale = Vector2(0.774106, 4.56385)
+theme_override_fonts/font = ExtResource("7_hbuy0")
+theme_override_font_sizes/font_size = 256
+text = "Multiplication/Division"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 191.0
+offset_right = 1967.0
+offset_bottom = 1399.0
+scale = Vector2(0.208198, 0.0661967)
+icon = ExtResource("6_dh54b")
+script = ExtResource("9_8yg5v")
+
+[node name="Label" type="Label" parent="Button3"]
+layout_mode = 0
+offset_left = 139.291
+offset_top = 211.491
+offset_right = 1237.29
+offset_bottom = 444.491
+scale = Vector2(1.47016, 4.0071)
+theme_override_fonts/font = ExtResource("7_hbuy0")
+theme_override_font_sizes/font_size = 256
+text = "Geometry"
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 275.0
+offset_right = 1967.0
+offset_bottom = 1483.0
+scale = Vector2(0.208198, 0.0661967)
+icon = ExtResource("6_dh54b")
+
+[node name="Label" type="Label" parent="Button4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button5" type="Button" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 359.0
+offset_right = 1967.0
+offset_bottom = 1567.0
+scale = Vector2(0.208198, 0.0661967)
+icon = ExtResource("6_dh54b")
+
+[node name="Label" type="Label" parent="Button5"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button6" type="Button" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 443.0
+offset_right = 1967.0
+offset_bottom = 1651.0
+scale = Vector2(0.208198, 0.0661967)
+icon = ExtResource("6_dh54b")
+
+[node name="Label" type="Label" parent="Button6"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button7" type="Button" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 527.0
+offset_right = 1967.0
+offset_bottom = 1735.0
+scale = Vector2(0.208198, 0.0661967)
+icon = ExtResource("6_dh54b")
+
+[node name="Label" type="Label" parent="Button7"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="anim" parent="." instance=ExtResource("3_e8xmd")]
+visible = false
+layout_mode = 1
+
+[connection signal="mouse_entered" from="Button2" to="Button2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button2" to="Button2" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
+[connection signal="mouse_entered" from="Button" to="Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="Button" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="Button3" to="Button3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button3" to="Button3" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]

@@ -1,6 +1,6 @@
-extends Control
+extends Button
 
-
+@export var animacja1 : animacja
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -11,9 +11,10 @@ func _process(delta):
 	pass
 
 
-func _on_button_pressed():
+func _on_pressed():
+	$".".visible=false
+	$"../wyjscie".visible=false
+	animacja1.ktora_anim(true)
+	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://menusy/wybor tematu.tscn")
 
-
-func _on_button_2_pressed():
-	get_tree().reload_current_scene()

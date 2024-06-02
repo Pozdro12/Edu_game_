@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://3kf42t60aik7"]
 
 [ext_resource type="Script" path="res://dzielenie/dzielenie.gd" id="1_pxtj2"]
-[ext_resource type="Texture2D" uid="uid://dnoj6w7dvdl2i" path="res://placeholdery/poziom2.png" id="2_2koky"]
+[ext_resource type="Texture2D" uid="uid://cveqa6c85jyjy" path="res://buttons-20240602T142656Z-001/backround/Division_ bck.png" id="2_37wri"]
 [ext_resource type="Texture2D" uid="uid://pl1n4cbocwqh" path="res://mnozenie/question.png" id="3_s3kkl"]
 [ext_resource type="Texture2D" uid="uid://cgro0e1t8bxjs" path="res://dzielenie/dziel.png" id="4_caxyd"]
 [ext_resource type="PackedScene" uid="uid://e4xec8t320oj" path="res://mnozenie/przegrana.tscn" id="5_ply53"]
@@ -25,7 +25,7 @@ offset_left = -2.0
 offset_top = 1.0
 offset_right = 964.072
 offset_bottom = 565.52
-texture = ExtResource("2_2koky")
+texture = ExtResource("2_37wri")
 expand_mode = 1
 
 [node name="1instance" type="TextureRect" parent="."]

@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr5oeet53ukly"]
+[gd_scene load_steps=9 format=3 uid="uid://dr5oeet53ukly"]
 
-[ext_resource type="Texture2D" uid="uid://bco7lnamake8j" path="res://menusy/placeholder_main_menu.png" id="1_3sbda"]
-[ext_resource type="Theme" uid="uid://bu4xa3cvnkeqw" path="res://motywy/new_theme.tres" id="1_jcksg"]
+[ext_resource type="Texture2D" uid="uid://cggoqb1bpv6qc" path="res://buttons-20240602T142656Z-001/backround/Start_menu_2.png" id="3_bvidj"]
+[ext_resource type="Texture2D" uid="uid://c35p5cudtdmfl" path="res://buttons-20240602T142656Z-001/buttons/start2.png" id="4_bg4e8"]
+[ext_resource type="Texture2D" uid="uid://2cn0p042if6q" path="res://buttons-20240602T142656Z-001/buttons/Start_button(for start menu).png" id="4_f228p"]
+[ext_resource type="PackedScene" uid="uid://y7yrfxq5pcf" path="res://menusy/animacja.tscn" id="5_arrqs"]
+[ext_resource type="Script" path="res://menusy/starttext.gd" id="5_cojkm"]
+[ext_resource type="Texture2D" uid="uid://dm1h3gq0337ev" path="res://buttons-20240602T142656Z-001/buttons/Close_button(for start menu).png" id="6_aypk0"]
+[ext_resource type="Texture2D" uid="uid://burkbb2j6sgvm" path="res://buttons-20240602T142656Z-001/buttons/close2.png" id="7_0kmkk"]
+[ext_resource type="Script" path="res://menusy/exit.gd" id="7_08j0s"]
 
 [node name="Menu glowne" type="Control"]
 layout_mode = 3
@@ -10,7 +16,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_jcksg")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -19,54 +24,53 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_3sbda")
+texture = ExtResource("3_bvidj")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="WyborTematu" parent="." instance=ExtResource("5_arrqs")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -704.0
+offset_top = -238.5
+offset_right = 1856.0
+offset_bottom = 886.5
+
+[node name="starttext" type="TextureButton" parent="." node_paths=PackedStringArray("animacja1")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = 140.0
+offset_right = 2483.0
+offset_bottom = 1191.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
+scale = Vector2(0.0567615, 0.051754)
+texture_normal = ExtResource("4_f228p")
+texture_hover = ExtResource("4_bg4e8")
+script = ExtResource("5_cojkm")
+animacja1 = NodePath("../WyborTematu")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="exit" type="TextureButton" parent="."]
 layout_mode = 2
-alignment = 1
+offset_left = 501.0
+offset_top = 531.0
+offset_right = 3061.0
+offset_bottom = 1582.0
+scale = Vector2(0.0563565, 0.0525481)
+texture_normal = ExtResource("6_aypk0")
+texture_hover = ExtResource("7_0kmkk")
+stretch_mode = 0
+script = ExtResource("7_08j0s")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 48
-text = "Edu Game"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="guziki" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 10
-
-[node name="start" type="Button" parent="MarginContainer/VBoxContainer/guziki"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-focus_neighbor_top = NodePath("../wyjscie")
-focus_neighbor_bottom = NodePath("../wyjscie")
-focus_next = NodePath("../wyjscie")
-focus_previous = NodePath("../wyjscie")
-text = "Start
-"
-
-[node name="wyjscie" type="Button" parent="MarginContainer/VBoxContainer/guziki"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-focus_neighbor_top = NodePath("../start")
-focus_neighbor_bottom = NodePath("../start")
-focus_next = NodePath("../start")
-focus_previous = NodePath("../start")
-text = "Exit"
+[connection signal="mouse_entered" from="starttext" to="starttext" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="starttext" to="starttext" method="_on_mouse_exited"]
+[connection signal="pressed" from="starttext" to="starttext" method="_on_pressed"]
+[connection signal="pressed" from="exit" to="exit" method="_on_pressed"]
