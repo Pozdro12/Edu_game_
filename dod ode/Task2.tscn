@@ -1,0 +1,244 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx6t68mplasul"]
+
+[ext_resource type="Texture2D" uid="uid://d3s657aqwkeem" path="res://buttons-20240602T142656Z-001/backround/Substraction_bck.png" id="1_8lafu"]
+[ext_resource type="Script" path="res://dod ode/A.gd" id="2_r8s41"]
+
+[sub_resource type="GDScript" id="GDScript_kjjt2"]
+resource_name = "task2"
+script/source = "extends NinePatchRect
+var answer
+var correct_answer = Random.num1 - Random.num2
+
+# Called when the node enters the scene tree for the first time.
+
+
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+	
+func _ready():
+	Random.counter = Random.counter +1
+	get_node(\"a\").text=str(Random.a)
+	get_node(\"b\").text=str(Random.b)
+	get_node(\"c\").text=str(Random.c)
+	get_node(\"d\").text=str(Random.d)
+	get_node(\"A\").text= str(Random.num1) + \" - \" + str(Random.num2) + \" = ?\"
+func ifcorrect():
+	if answer == correct_answer:
+			get_node(\"B\").text=\"Correct\"
+			get_node(\"A\").text= str(Random.num1) + \" - \" + str(Random.num2) + \" = \"+ str(answer)
+			Random.score=Random.score+10
+			await get_tree().create_timer(1.0).timeout
+			
+			if Random.counter==10:
+				await get_tree().create_timer(2.0).timeout
+				Random.hp=3
+				
+				get_tree().change_scene_to_file(\"res://dod ode/GameOver.tscn\")
+			else:
+				get_node(\"B\").text=\"\"
+				Random.rand2()
+				get_tree().change_scene_to_file(\"res://dod ode/Task2.tscn\")
+			
+			
+			
+			
+				
+	else:
+			get_node(\"B\").text=\"Wrong\"
+			get_node(\"A\").text= str(Random.num1) + \" - \" + str(Random.num2) + \" = \"+ str(answer)
+			await get_tree().create_timer(1.0).timeout
+			if Random.counter==10:
+				await get_tree().create_timer(1.0).timeout
+				Random.hp=3
+				get_tree().change_scene_to_file(\"res://dod ode/GameOver.tscn\")
+			else:
+				get_node(\"B\").text=\"\"
+				Random.rand2()
+				get_tree().change_scene_to_file(\"res://dod ode/Task2.tscn\")
+				get_node(\"A\").text= str(Random.num1) + \" - \" + str(Random.num2) + \" = ?\"
+		
+func _on_a_pressed():
+	answer = Random.a
+	
+	ifcorrect()
+	
+
+
+func _on_b_pressed():
+	answer = Random.b
+	ifcorrect()
+
+func _on_c_pressed():
+	answer = Random.c
+	ifcorrect()
+
+
+
+func _on_d_pressed():
+	answer = Random.d
+	ifcorrect()
+	
+#func new():
+	#Random.rand()
+	#get_node(\"a\").text=str(Random.a)
+#	get_node(\"b\").text=str(Random.b)
+	#get_node(\"c\").text=str(Random.c)
+	#get_node(\"d\").text=str(Random.d)
+	#get_node(\"A\").text= str(Random.num1) + \" + \" + str(Random.num2) + \" = ?\"
+
+"
+
+[sub_resource type="GDScript" id="GDScript_gdl7k"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text=\"Score \"+str(Random.score)
+"
+
+[sub_resource type="GDScript" id="GDScript_xg4ev"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text=\"Question number: \"+str(Random.counter)
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.0551, 16.5943)
+texture = ExtResource("1_8lafu")
+expand_mode = 1
+
+[node name="2" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.5
+offset_top = -174.0
+offset_right = 255.5
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_kjjt2")
+
+[node name="a" type="Button" parent="2"]
+layout_mode = 0
+offset_left = 263.5
+offset_top = 322.0
+offset_right = 434.5
+offset_bottom = 381.0
+text = "a"
+
+[node name="b" type="Button" parent="2"]
+layout_mode = 0
+offset_left = 463.5
+offset_top = 322.0
+offset_right = 634.5
+offset_bottom = 381.0
+text = "b"
+
+[node name="c" type="Button" parent="2"]
+layout_mode = 0
+offset_left = -176.5
+offset_top = 322.0
+offset_right = 7.5
+offset_bottom = 381.0
+text = "c"
+
+[node name="d" type="Button" parent="2"]
+layout_mode = 0
+offset_left = 39.5
+offset_top = 322.0
+offset_right = 223.5
+offset_bottom = 381.0
+text = "d"
+
+[node name="A" type="Label" parent="2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -66.5
+offset_right = 176.0
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+script = ExtResource("2_r8s41")
+
+[node name="B" type="Label" parent="2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -204.0
+offset_right = 176.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+script = ExtResource("2_r8s41")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="2"]
+
+[node name="Score" type="Label" parent="2/CanvasLayer"]
+offset_left = 112.0
+offset_top = 120.0
+offset_right = 208.0
+offset_bottom = 176.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Score"
+script = SubResource("GDScript_gdl7k")
+
+[node name="Level" type="Label" parent="2/CanvasLayer"]
+offset_left = 400.0
+offset_top = 32.0
+offset_right = 672.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Question number: "
+script = SubResource("GDScript_xg4ev")
+
+[connection signal="pressed" from="2/a" to="2" method="_on_a_pressed"]
+[connection signal="pressed" from="2/b" to="2" method="_on_b_pressed"]
+[connection signal="pressed" from="2/c" to="2" method="_on_c_pressed"]
+[connection signal="pressed" from="2/d" to="2" method="_on_d_pressed"]

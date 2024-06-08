@@ -1,15 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://bewlsa7i7v0ge"]
+[gd_scene load_steps=18 format=3 uid="uid://bewlsa7i7v0ge"]
 
 [ext_resource type="Script" path="res://menusy/wybor tematu.gd" id="1_vo54q"]
 [ext_resource type="Texture2D" uid="uid://dg8r6te8y0mhe" path="res://buttons-20240602T142656Z-001/backround/Subject_menu.png" id="2_5cilt"]
 [ext_resource type="PackedScene" uid="uid://y7yrfxq5pcf" path="res://menusy/animacja.tscn" id="3_e8xmd"]
-[ext_resource type="Texture2D" uid="uid://bec3tbn3mp80h" path="res://menusy/buttonson.png" id="3_nmqgv"]
-[ext_resource type="Script" path="res://menusy/TextureButton.gd" id="4_qeel0"]
 [ext_resource type="Texture2D" uid="uid://de4grf065f3h8" path="res://buttons-20240602T142656Z-001/buttons/guzikson_subj.png" id="6_dh54b"]
 [ext_resource type="Script" path="res://menusy/Button2.gd" id="6_u04j2"]
 [ext_resource type="FontFile" uid="uid://bndi2jog1m31o" path="res://motywy/fonciaki/Chalkboard-Regular.ttf" id="7_hbuy0"]
 [ext_resource type="Script" path="res://menusy/Button.gd" id="8_meebf"]
 [ext_resource type="Script" path="res://menusy/Button3.gd" id="9_8yg5v"]
+[ext_resource type="Script" path="res://menusy/Button4.gd" id="10_gdrmt"]
+[ext_resource type="Script" path="res://menusy/Button5.gd" id="11_30qrc"]
+[ext_resource type="Script" path="res://menusy/Button6.gd" id="12_df2fm"]
+[ext_resource type="Script" path="res://menusy/Button7.gd" id="13_f14jv"]
+[ext_resource type="Script" path="res://menusy/exitMenu.gd" id="13_rxmrn"]
+[ext_resource type="Script" path="res://menusy/exit1.gd" id="13_wa1m0"]
+[ext_resource type="Texture2D" uid="uid://k1jn5mykeegn" path="res://buttons-20240602T142656Z-001/buttons/Close_button.png" id="14_jb2vd"]
+[ext_resource type="Script" path="res://menusy/Button9.gd" id="15_c5bjp"]
+[ext_resource type="Script" path="res://menusy/Button8.gd" id="16_mabbs"]
 
 [node name="WyborTematu" type="Control" node_paths=PackedStringArray("animacja1")]
 layout_mode = 3
@@ -29,26 +36,6 @@ scale = Vector2(29.2868, 17.4199)
 texture = ExtResource("2_5cilt")
 expand_mode = 1
 
-[node name="TextureButton" type="TextureButton" parent="."]
-visible = false
-layout_mode = 2
-offset_left = 40.0
-offset_top = 108.0
-offset_right = 380.0
-offset_bottom = 194.0
-scale = Vector2(0.849803, 0.779342)
-texture_normal = ExtResource("3_nmqgv")
-script = ExtResource("4_qeel0")
-
-[node name="Label" type="Label" parent="TextureButton"]
-layout_mode = 0
-offset_left = 397.739
-offset_top = 61.5904
-offset_right = 569.739
-offset_bottom = 84.5904
-scale = Vector2(0.390966, 0.680224)
-text = "pozdreki dla wariatow"
-
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
 offset_left = 31.0
@@ -65,10 +52,10 @@ offset_left = 93.6027
 offset_top = 115.869
 offset_right = 2933.6
 offset_bottom = 464.869
-scale = Vector2(0.740561, 4.85486)
+scale = Vector2(0.977001, 4.28134)
 theme_override_fonts/font = ExtResource("7_hbuy0")
 theme_override_font_sizes/font_size = 256
-text = "Fill in missing numbers"
+text = "Sorting numbers"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -82,14 +69,14 @@ script = ExtResource("8_meebf")
 
 [node name="Label" type="Label" parent="Button"]
 layout_mode = 0
-offset_left = 57.6376
-offset_top = 166.171
-offset_right = 2324.64
-offset_bottom = 399.171
-scale = Vector2(0.774106, 4.56385)
+offset_left = 48.0312
+offset_top = 151.065
+offset_right = 2315.03
+offset_bottom = 384.065
+scale = Vector2(0.807072, 4.56385)
 theme_override_fonts/font = ExtResource("7_hbuy0")
 theme_override_font_sizes/font_size = 256
-text = "Multiplication/Division"
+text = "Addition/subtraction"
 
 [node name="Button3" type="Button" parent="."]
 layout_mode = 0
@@ -103,14 +90,14 @@ script = ExtResource("9_8yg5v")
 
 [node name="Label" type="Label" parent="Button3"]
 layout_mode = 0
-offset_left = 139.291
+offset_left = 100.866
 offset_top = 211.491
-offset_right = 1237.29
+offset_right = 1497.87
 offset_bottom = 444.491
-scale = Vector2(1.47016, 4.0071)
+scale = Vector2(1.18492, 3.63446)
 theme_override_fonts/font = ExtResource("7_hbuy0")
 theme_override_font_sizes/font_size = 256
-text = "Geometry"
+text = "Fill in number"
 
 [node name="Button4" type="Button" parent="."]
 layout_mode = 0
@@ -120,11 +107,18 @@ offset_right = 1967.0
 offset_bottom = 1483.0
 scale = Vector2(0.208198, 0.0661967)
 icon = ExtResource("6_dh54b")
+script = ExtResource("10_gdrmt")
 
 [node name="Label" type="Label" parent="Button4"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 72.0468
+offset_top = 181.278
+offset_right = 2239.05
+offset_bottom = 414.278
+scale = Vector2(0.812534, 4.20652)
+theme_override_fonts/font = ExtResource("7_hbuy0")
+theme_override_font_sizes/font_size = 256
+text = "Multiplication/Division"
 
 [node name="Button5" type="Button" parent="."]
 layout_mode = 0
@@ -134,11 +128,18 @@ offset_right = 1967.0
 offset_bottom = 1567.0
 scale = Vector2(0.208198, 0.0661967)
 icon = ExtResource("6_dh54b")
+script = ExtResource("11_30qrc")
 
 [node name="Label" type="Label" parent="Button5"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 81.653
+offset_top = 90.639
+offset_right = 1797.65
+offset_bottom = 323.639
+scale = Vector2(1.01619, 4.37436)
+theme_override_fonts/font = ExtResource("7_hbuy0")
+theme_override_font_sizes/font_size = 256
+text = "Place numbers"
 
 [node name="Button6" type="Button" parent="."]
 layout_mode = 0
@@ -148,11 +149,18 @@ offset_right = 1967.0
 offset_bottom = 1651.0
 scale = Vector2(0.208198, 0.0661967)
 icon = ExtResource("6_dh54b")
+script = ExtResource("12_df2fm")
 
 [node name="Label" type="Label" parent="Button6"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 24.0156
+offset_top = -90.639
+offset_right = 1794.02
+offset_bottom = 251.361
+scale = Vector2(1.05345, 3.37038)
+theme_override_fonts/font = ExtResource("7_hbuy0")
+theme_override_font_sizes/font_size = 256
+text = "<,>,= operators"
 
 [node name="Button7" type="Button" parent="."]
 layout_mode = 0
@@ -162,14 +170,80 @@ offset_right = 1967.0
 offset_bottom = 1735.0
 scale = Vector2(0.208198, 0.0661967)
 icon = ExtResource("6_dh54b")
+script = ExtResource("13_f14jv")
 
 [node name="Label" type="Label" parent="Button7"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 273.778
+offset_top = 151.065
+offset_right = 2147.78
+offset_bottom = 493.065
+scale = Vector2(1.08748, 3.89636)
+theme_override_fonts/font = ExtResource("7_hbuy0")
+theme_override_font_sizes/font_size = 256
+text = "geometry"
+
+[node name="exit" type="Button" parent="." node_paths=PackedStringArray("animacja1")]
+layout_mode = 0
+offset_left = 1029.0
+offset_top = 32.0
+offset_right = 1293.0
+offset_bottom = 296.0
+scale = Vector2(0.236698, 0.228713)
+icon = ExtResource("14_jb2vd")
+script = ExtResource("13_wa1m0")
+animacja1 = NodePath("../anim")
+
+[node name="exit2" type="Button" parent="."]
+offset_left = 1029.0
+offset_top = 32.0
+offset_right = 1293.0
+offset_bottom = 296.0
+scale = Vector2(0.236698, 0.228713)
+icon = ExtResource("14_jb2vd")
+script = ExtResource("13_rxmrn")
+
+[node name="Button9" type="Button" parent="."]
+offset_left = 351.0
+offset_top = 214.0
+offset_right = 2287.0
+offset_bottom = 1422.0
+scale = Vector2(0.208198, 0.0661967)
+icon = ExtResource("6_dh54b")
+script = ExtResource("15_c5bjp")
+
+[node name="Label" type="Label" parent="Button9"]
+layout_mode = 0
+offset_left = 201.731
+offset_top = 196.384
+offset_right = 1917.73
+offset_bottom = 429.384
+scale = Vector2(1.01619, 4.37436)
+theme_override_fonts/font = ExtResource("7_hbuy0")
+theme_override_font_sizes/font_size = 256
+text = "Multiplication"
+
+[node name="Button8" type="Button" parent="."]
+offset_left = 352.0
+offset_top = 356.0
+offset_right = 2288.0
+offset_bottom = 1564.0
+scale = Vector2(0.208198, 0.0661967)
+icon = ExtResource("6_dh54b")
+script = ExtResource("16_mabbs")
+
+[node name="Label" type="Label" parent="Button8"]
+layout_mode = 0
+offset_left = 417.871
+offset_top = 241.704
+offset_right = 2133.87
+offset_bottom = 474.704
+scale = Vector2(1.01619, 4.37436)
+theme_override_fonts/font = ExtResource("7_hbuy0")
+theme_override_font_sizes/font_size = 256
+text = "Division"
 
 [node name="anim" parent="." instance=ExtResource("3_e8xmd")]
-visible = false
 layout_mode = 1
 
 [connection signal="mouse_entered" from="Button2" to="Button2" method="_on_mouse_entered"]
@@ -181,3 +255,23 @@ layout_mode = 1
 [connection signal="mouse_entered" from="Button3" to="Button3" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Button3" to="Button3" method="_on_mouse_exited"]
 [connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
+[connection signal="mouse_entered" from="Button4" to="Button4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button4" to="Button4" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button4" to="Button4" method="_on_pressed"]
+[connection signal="mouse_entered" from="Button5" to="Button5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button5" to="Button5" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button5" to="Button5" method="_on_pressed"]
+[connection signal="mouse_entered" from="Button6" to="Button6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button6" to="Button6" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button6" to="Button6" method="_on_pressed"]
+[connection signal="mouse_entered" from="Button7" to="Button7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button7" to="Button7" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button7" to="Button7" method="_on_pressed"]
+[connection signal="pressed" from="exit" to="exit" method="_on_pressed"]
+[connection signal="pressed" from="exit2" to="exit2" method="_on_pressed"]
+[connection signal="mouse_entered" from="Button9" to="Button9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button9" to="Button9" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button9" to="Button9" method="_on_pressed"]
+[connection signal="mouse_entered" from="Button8" to="Button8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button8" to="Button8" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button8" to="Button8" method="_on_pressed"]
