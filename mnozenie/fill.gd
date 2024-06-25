@@ -88,6 +88,8 @@ func sprwdz():
 
 func wygrana():
 	if wynik == 10 :
+		Globalny.poziom2_mnozenie=true
+		Globalny.save()
 		wygr.visible=true
 	
 func _on_b_pressed():

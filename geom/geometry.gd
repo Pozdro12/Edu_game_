@@ -100,6 +100,7 @@ func sprwdzWyg():
 	if wynik == 6 :
 		get_node("wynik").text=str(wynik)
 		endgame=true
+		Globalny.geom_ukoncz=true
 		wygr.visible=true
 
 func sprwdzPrzg():

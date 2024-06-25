@@ -21,6 +21,15 @@ func _on_pressed():
 	$"../Button9".visible=true
 	$"../Button8".visible=true
 	$"../exit2".visible=true
+	if Globalny.mnozenie_ukonczone==true:
+		$"../zal_mno".visible=true
+	else:
+		$"../zal_mno".visible=false
+	
+	if Globalny.dzielenie_ukonczone==true:
+		$"../zal_dziel".visible=true
+	else:
+		$"../zal_dziel".visible=false
 	
 func _on_mouse_entered():
 	$Label.set("theme_override_colors/font_color", Color(0, 70, 0))

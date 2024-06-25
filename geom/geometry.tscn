@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b6fl5nbrir0ns"]
 
-[ext_resource type="Texture2D" uid="uid://dnoj6w7dvdl2i" path="res://placeholdery/poziom2.png" id="1_4gmb1"]
 [ext_resource type="Script" path="res://geom/geometry.gd" id="1_8tvu4"]
+[ext_resource type="Texture2D" uid="uid://dg8r6te8y0mhe" path="res://buttons-20240602T142656Z-001/backround/Subject_menu.png" id="2_73d6p"]
 [ext_resource type="Script" path="res://geom/LineEdit.gd" id="2_lcq2s"]
 [ext_resource type="PackedScene" uid="uid://e4xec8t320oj" path="res://mnozenie/przegrana.tscn" id="4_mjhhf"]
 [ext_resource type="PackedScene" uid="uid://cgen53sxd2e71" path="res://mnozenie/wygrana.tscn" id="5_5rh7i"]
@@ -24,15 +24,15 @@ offset_left = -2.0
 offset_top = 1.0
 offset_right = 964.072
 offset_bottom = 565.52
-texture = ExtResource("1_4gmb1")
+texture = ExtResource("2_73d6p")
 expand_mode = 1
 
 [node name="geom" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 320.0
-offset_top = 72.0
-offset_right = 768.0
-offset_bottom = 376.0
+offset_left = 248.0
+offset_top = 144.0
+offset_right = 696.0
+offset_bottom = 448.0
 
 [node name="wynik" type="Label" parent="."]
 layout_mode = 1

@@ -24,3 +24,5 @@ func _on_pressed():
 	$"../Button9".visible=false
 	$"../Button8".visible=false
 	$"../exit2".visible=false
+	$"../zal_mno".visible=false
+	$"../zal_dziel".visible=false

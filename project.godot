@@ -18,6 +18,7 @@ config/icon="res://poziomson/icon.svg"
 [autoload]
 
 Random="*res://dod ode/random.gd"
+Globalny="*res://globalny.gd"
 
 [display]
 

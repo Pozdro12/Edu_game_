@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bewlsa7i7v0ge"]
+[gd_scene load_steps=19 format=3 uid="uid://bewlsa7i7v0ge"]
 
 [ext_resource type="Script" path="res://menusy/wybor tematu.gd" id="1_vo54q"]
 [ext_resource type="Texture2D" uid="uid://dg8r6te8y0mhe" path="res://buttons-20240602T142656Z-001/backround/Subject_menu.png" id="2_5cilt"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://k1jn5mykeegn" path="res://buttons-20240602T142656Z-001/buttons/Close_button.png" id="14_jb2vd"]
 [ext_resource type="Script" path="res://menusy/Button9.gd" id="15_c5bjp"]
 [ext_resource type="Script" path="res://menusy/Button8.gd" id="16_mabbs"]
+[ext_resource type="Texture2D" uid="uid://ddl4rihqcmf8a" path="res://buttons-20240602T142656Z-001/placeholdery/zaliczenie.png" id="18_p8cp4"]
 
 [node name="WyborTematu" type="Control" node_paths=PackedStringArray("animacja1")]
 layout_mode = 3
@@ -39,9 +40,9 @@ expand_mode = 1
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
 offset_left = 31.0
-offset_top = 23.0
+offset_top = 107.0
 offset_right = 1967.0
-offset_bottom = 1231.0
+offset_bottom = 1315.0
 scale = Vector2(0.208198, 0.0661967)
 icon = ExtResource("6_dh54b")
 script = ExtResource("6_u04j2")
@@ -60,9 +61,9 @@ text = "Sorting numbers"
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 31.0
-offset_top = 107.0
+offset_top = 275.0
 offset_right = 1967.0
-offset_bottom = 1315.0
+offset_bottom = 1483.0
 scale = Vector2(0.208198, 0.0661967)
 icon = ExtResource("6_dh54b")
 script = ExtResource("8_meebf")
@@ -81,9 +82,9 @@ text = "Addition/subtraction"
 [node name="Button3" type="Button" parent="."]
 layout_mode = 0
 offset_left = 31.0
-offset_top = 191.0
+offset_top = 359.0
 offset_right = 1967.0
-offset_bottom = 1399.0
+offset_bottom = 1567.0
 scale = Vector2(0.208198, 0.0661967)
 icon = ExtResource("6_dh54b")
 script = ExtResource("9_8yg5v")
@@ -102,9 +103,9 @@ text = "Fill in number"
 [node name="Button4" type="Button" parent="."]
 layout_mode = 0
 offset_left = 31.0
-offset_top = 275.0
+offset_top = 443.0
 offset_right = 1967.0
-offset_bottom = 1483.0
+offset_bottom = 1651.0
 scale = Vector2(0.208198, 0.0661967)
 icon = ExtResource("6_dh54b")
 script = ExtResource("10_gdrmt")
@@ -123,9 +124,9 @@ text = "Multiplication/Division"
 [node name="Button5" type="Button" parent="."]
 layout_mode = 0
 offset_left = 31.0
-offset_top = 359.0
+offset_top = 191.0
 offset_right = 1967.0
-offset_bottom = 1567.0
+offset_bottom = 1399.0
 scale = Vector2(0.208198, 0.0661967)
 icon = ExtResource("6_dh54b")
 script = ExtResource("11_30qrc")
@@ -144,9 +145,9 @@ text = "Place numbers"
 [node name="Button6" type="Button" parent="."]
 layout_mode = 0
 offset_left = 31.0
-offset_top = 443.0
+offset_top = 23.0
 offset_right = 1967.0
-offset_bottom = 1651.0
+offset_bottom = 1231.0
 scale = Vector2(0.208198, 0.0661967)
 icon = ExtResource("6_dh54b")
 script = ExtResource("12_df2fm")
@@ -195,6 +196,7 @@ script = ExtResource("13_wa1m0")
 animacja1 = NodePath("../anim")
 
 [node name="exit2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1029.0
 offset_top = 32.0
 offset_right = 1293.0
@@ -204,6 +206,7 @@ icon = ExtResource("14_jb2vd")
 script = ExtResource("13_rxmrn")
 
 [node name="Button9" type="Button" parent="."]
+layout_mode = 0
 offset_left = 351.0
 offset_top = 214.0
 offset_right = 2287.0
@@ -224,6 +227,7 @@ theme_override_font_sizes/font_size = 256
 text = "Multiplication"
 
 [node name="Button8" type="Button" parent="."]
+layout_mode = 0
 offset_left = 352.0
 offset_top = 356.0
 offset_right = 2288.0
@@ -243,8 +247,43 @@ theme_override_fonts/font = ExtResource("7_hbuy0")
 theme_override_font_sizes/font_size = 256
 text = "Division"
 
+[node name="zal_uzu2" type="TextureRect" parent="."]
+offset_left = 443.0
+offset_top = 538.0
+offset_right = 654.0
+offset_bottom = 699.0
+scale = Vector2(0.418401, 0.408204)
+texture = ExtResource("18_p8cp4")
+
+[node name="zal_uzu" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 365.0
+offset_right = 651.0
+offset_bottom = 526.0
+scale = Vector2(0.418401, 0.408204)
+texture = ExtResource("18_p8cp4")
+
 [node name="anim" parent="." instance=ExtResource("3_e8xmd")]
 layout_mode = 1
+
+[node name="zal_mno" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 204.0
+offset_right = 971.0
+offset_bottom = 365.0
+scale = Vector2(0.547114, 0.542197)
+texture = ExtResource("18_p8cp4")
+
+[node name="zal_dziel" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 756.0
+offset_top = 345.0
+offset_right = 967.0
+offset_bottom = 506.0
+scale = Vector2(0.674954, 0.590049)
+texture = ExtResource("18_p8cp4")
 
 [connection signal="mouse_entered" from="Button2" to="Button2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Button2" to="Button2" method="_on_mouse_exited"]

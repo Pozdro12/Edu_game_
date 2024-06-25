@@ -1,0 +1,168 @@
+[gd_scene load_steps=9 format=3 uid="uid://darpj3qgbg0oh"]
+
+[ext_resource type="Script" path="res://Fill_poziomy/fillx_poziom2/fillx_p2.gd" id="1_idkbg"]
+[ext_resource type="Texture2D" uid="uid://dgx1ysft6oqmg" path="res://buttons-20240602T142656Z-001/backround/_= menu.png" id="2_nm6r4"]
+[ext_resource type="Texture2D" uid="uid://cmfwlsiqlimoq" path="res://fillx/=.png" id="3_ifjnl"]
+[ext_resource type="Texture2D" uid="uid://b4q667u2eyv1k" path="res://mnozenie/kropka.png" id="4_mofdb"]
+[ext_resource type="PackedScene" uid="uid://e4xec8t320oj" path="res://mnozenie/przegrana.tscn" id="5_2e074"]
+[ext_resource type="PackedScene" uid="uid://cgen53sxd2e71" path="res://mnozenie/wygrana.tscn" id="6_jtt76"]
+[ext_resource type="Script" path="res://Fill_poziomy/fillx_poziom1/przegrana_uzu.gd" id="6_q4n8f"]
+[ext_resource type="Script" path="res://Fill_poziomy/fillx_poziom1/wygrana_uzu.gd" id="7_5614j"]
+
+[node name="Fillx" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_idkbg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.164
+anchor_bottom = 0.135
+offset_left = -2.0
+offset_top = 1.0
+offset_right = 964.072
+offset_bottom = 565.52
+texture = ExtResource("2_nm6r4")
+expand_mode = 1
+
+[node name="1instance" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 109.0
+offset_right = 367.0
+offset_bottom = 293.0
+expand_mode = 1
+
+[node name="2instance" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 112.0
+offset_right = 682.0
+offset_bottom = 294.0
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 16.0
+offset_right = 1120.0
+offset_bottom = 392.0
+texture = ExtResource("3_ifjnl")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 76.0
+offset_right = 685.0
+offset_bottom = 339.0
+texture = ExtResource("4_mofdb")
+expand_mode = 1
+
+[node name="a" type="Button" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 512.0
+offset_right = 290.0
+offset_bottom = 569.0
+
+[node name="b" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.085
+anchor_bottom = 0.132
+offset_left = 384.0
+offset_top = 512.0
+offset_right = 384.08
+offset_bottom = 483.464
+
+[node name="c" type="Button" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 512.0
+offset_right = 675.0
+offset_bottom = 570.0
+
+[node name="d" type="Button" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 512.0
+offset_right = 866.0
+offset_bottom = 572.0
+
+[node name="wynik" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -203.0
+offset_top = 28.0
+offset_right = -122.0
+offset_bottom = 116.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="liczba" type="Label" parent="."]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 128.0
+offset_right = 386.0
+offset_bottom = 271.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 72
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="szansy" type="Label" parent="."]
+layout_mode = 0
+offset_left = 853.0
+offset_top = 13.0
+offset_right = 1101.0
+offset_bottom = 168.0
+
+[node name="przeg" type="CanvasLayer" parent="."]
+
+[node name="Przegrana" parent="przeg" instance=ExtResource("5_2e074")]
+script = ExtResource("6_q4n8f")
+metadata/_edit_use_anchors_ = true
+
+[node name="wygr" type="CanvasLayer" parent="."]
+
+[node name="Wygrana" parent="wygr" instance=ExtResource("6_jtt76")]
+script = ExtResource("7_5614j")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 144.0
+offset_right = 630.0
+offset_bottom = 259.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 72
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="wynikRown" type="Label" parent="."]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 128.0
+offset_right = 964.0
+offset_bottom = 268.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 72
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="a" to="." method="_on_a_pressed"]
+[connection signal="pressed" from="b" to="." method="_on_b_pressed"]
+[connection signal="pressed" from="c" to="." method="_on_c_pressed"]
+[connection signal="pressed" from="d" to="." method="_on_d_pressed"]

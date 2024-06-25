@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://bpwvx8n2rxl50"]
+
+[ext_resource type="Script" path="res://Dzielenie_poziomy/wybor_poziomu_dziel/Wybor_poziomu_dziel.gd" id="1_pedyu"]
+[ext_resource type="Texture2D" uid="uid://dnoj6w7dvdl2i" path="res://placeholdery/poziom2.png" id="2_tywqb"]
+[ext_resource type="Texture2D" uid="uid://dj815t4w2hrbu" path="res://buttons-20240602T142656Z-001/placeholdery/guzikpoziomu.png" id="3_mv52r"]
+[ext_resource type="Texture2D" uid="uid://bnaiwy2alab5o" path="res://buttons-20240602T142656Z-001/placeholdery/poziom zablokowany.png" id="4_euv40"]
+[ext_resource type="Script" path="res://Dzielenie_poziomy/wybor_poziomu_dziel/1_dziel.gd" id="5_v5ben"]
+[ext_resource type="Script" path="res://Dzielenie_poziomy/wybor_poziomu_dziel/2_dziel.gd" id="6_mjn66"]
+[ext_resource type="Script" path="res://Dzielenie_poziomy/wybor_poziomu_dziel/3_dziel.gd" id="7_fnl17"]
+[ext_resource type="Texture2D" uid="uid://k1jn5mykeegn" path="res://buttons-20240602T142656Z-001/buttons/Close_button.png" id="8_2m3ef"]
+[ext_resource type="Script" path="res://Mnozenie_poziomy/wybor_poziomu_mnoz/exit_mnoz.gd" id="9_8uj1h"]
+
+[node name="WyborPoziomu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pedyu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.9223, 16.4899)
+texture = ExtResource("2_tywqb")
+expand_mode = 1
+
+[node name="1" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 291.0
+offset_right = 355.0
+offset_bottom = 420.0
+scale = Vector2(0.42622, 0.48674)
+texture_normal = ExtResource("3_mv52r")
+texture_disabled = ExtResource("4_euv40")
+ignore_texture_size = true
+script = ExtResource("5_v5ben")
+
+[node name="2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 579.0
+offset_top = 79.0001
+offset_right = 789.0
+offset_bottom = 212.0
+scale = Vector2(0.396288, 0.482283)
+texture_normal = ExtResource("3_mv52r")
+texture_disabled = ExtResource("4_euv40")
+script = ExtResource("6_mjn66")
+
+[node name="3" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 779.0
+offset_top = 447.0
+offset_right = 989.0
+offset_bottom = 580.0
+scale = Vector2(0.496848, 0.504887)
+texture_normal = ExtResource("3_mv52r")
+texture_disabled = ExtResource("4_euv40")
+script = ExtResource("7_fnl17")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1065.0
+offset_top = 25.0
+offset_right = 1321.0
+offset_bottom = 281.0
+scale = Vector2(0.213348, 0.184168)
+texture_normal = ExtResource("8_2m3ef")
+script = ExtResource("9_8uj1h")
+
+[connection signal="pressed" from="1" to="1" method="_on_pressed"]
+[connection signal="pressed" from="2" to="2" method="_on_pressed"]
+[connection signal="pressed" from="3" to="3" method="_on_pressed"]
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

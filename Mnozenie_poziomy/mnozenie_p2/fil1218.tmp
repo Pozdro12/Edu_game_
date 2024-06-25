@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3 uid="uid://1sf28le3574u"]
+
+[ext_resource type="Texture2D" uid="uid://dnoj6w7dvdl2i" path="res://placeholdery/poziom2.png" id="1_di6pf"]
+[ext_resource type="Script" path="res://mnozenie/fill.gd" id="1_q87it"]
+[ext_resource type="Texture2D" uid="uid://pl1n4cbocwqh" path="res://mnozenie/question.png" id="3_y68l5"]
+[ext_resource type="Texture2D" uid="uid://b4q667u2eyv1k" path="res://mnozenie/kropka.png" id="4_yjftv"]
+
+[node name="Fill" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q87it")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.164
+anchor_bottom = 0.135
+offset_left = -2.0
+offset_top = 1.0
+offset_right = 964.072
+offset_bottom = 565.52
+texture = ExtResource("1_di6pf")
+expand_mode = 1
+
+[node name="1instance" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 109.0
+offset_right = 367.0
+offset_bottom = 293.0
+expand_mode = 1
+
+[node name="2instance" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 112.0
+offset_right = 682.0
+offset_bottom = 294.0
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_top = -5.0
+offset_right = 1144.0
+offset_bottom = 371.0
+texture = ExtResource("3_y68l5")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 25.0
+offset_right = 778.0
+offset_bottom = 401.0
+texture = ExtResource("4_yjftv")
+
+[node name="a" type="Button" parent="."]
+layout_mode = 0
+offset_left = 777.0
+offset_top = 481.0
+offset_right = 875.0
+offset_bottom = 538.0
+
+[node name="b" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.085
+anchor_bottom = 0.132
+offset_left = 618.0
+offset_top = 479.0
+offset_right = 618.08
+offset_bottom = 451.464
+
+[node name="c" type="Button" parent="."]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 478.0
+offset_right = 280.0
+offset_bottom = 536.0
+
+[node name="d" type="Button" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 480.0
+offset_right = 498.0
+offset_bottom = 538.0
+
+[node name="wynik" type="Label" parent="."]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 32.0
+offset_right = 454.0
+offset_bottom = 93.0
+
+[connection signal="pressed" from="a" to="." method="_on_a_pressed"]
+[connection signal="pressed" from="b" to="." method="_on_b_pressed"]
+[connection signal="pressed" from="c" to="." method="_on_c_pressed"]
+[connection signal="pressed" from="d" to="." method="_on_d_pressed"]
