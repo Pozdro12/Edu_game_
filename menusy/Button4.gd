@@ -17,6 +17,8 @@ func _on_pressed():
 	$"../Button6".visible=false
 	$"../Button7".visible=false
 	$"../exit".visible=false
+	$"../zal_uzu".visible=false
+	$"../zal_uzu2".visible=false
 	
 	$"../Button9".visible=true
 	$"../Button8".visible=true

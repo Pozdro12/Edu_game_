@@ -248,6 +248,7 @@ theme_override_font_sizes/font_size = 256
 text = "Division"
 
 [node name="zal_uzu2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 443.0
 offset_top = 538.0
 offset_right = 654.0

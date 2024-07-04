@@ -28,6 +28,7 @@ texture = ExtResource("3_bvidj")
 expand_mode = 1
 
 [node name="WyborTematu" parent="." instance=ExtResource("5_arrqs")]
+visible = false
 layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0

@@ -11,5 +11,9 @@ func _process(delta):
 	pass
 
 
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://wybor_poziomu/Wybor_poziomu.tscn")
+
+
 func _on_button_2_pressed():
-	get_tree().change_scene_to_file("res://menusy/wybor tematu.tscn")
+	self.visible=false

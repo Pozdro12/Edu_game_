@@ -3,9 +3,9 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if Globalny.poziom1_uzupelnianie==true:
-		$"1".disabled=false
+		$"4".disabled=false
 	else:
-		$"1".disabled=true
+		$"4".disabled=true
 	
 	if Globalny.poziom2_uzupelnianie==true:
 		$"2".disabled=false

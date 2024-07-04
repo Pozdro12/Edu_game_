@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dg8r6te8y0mhe" path="res://buttons-20240602T142656Z-001/backround/Subject_menu.png" id="2_73d6p"]
 [ext_resource type="Script" path="res://geom/LineEdit.gd" id="2_lcq2s"]
 [ext_resource type="PackedScene" uid="uid://e4xec8t320oj" path="res://mnozenie/przegrana.tscn" id="4_mjhhf"]
-[ext_resource type="PackedScene" uid="uid://cgen53sxd2e71" path="res://mnozenie/wygrana.tscn" id="5_5rh7i"]
+[ext_resource type="PackedScene" uid="uid://dugivcinlicnq" path="res://geom/wygrana_geom.tscn" id="5_ejacc"]
 
 [node name="Geometry" type="Control"]
 layout_mode = 3
@@ -72,7 +72,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="wygr" type="CanvasLayer" parent="."]
 
-[node name="Wygrana" parent="wygr" instance=ExtResource("5_5rh7i")]
-metadata/_edit_use_anchors_ = true
+[node name="Wygrana" parent="wygr" instance=ExtResource("5_ejacc")]
+offset_bottom = 6.10352e-05
 
 [connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]

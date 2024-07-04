@@ -101,6 +101,7 @@ func sprwdzWyg():
 		get_node("wynik").text=str(wynik)
 		endgame=true
 		Globalny.geom_ukoncz=true
+		Globalny.save()
 		wygr.visible=true
 
 func sprwdzPrzg():

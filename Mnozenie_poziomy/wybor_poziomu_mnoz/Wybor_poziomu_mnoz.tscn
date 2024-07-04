@@ -1,14 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://civpyvmpxycru"]
+[gd_scene load_steps=17 format=3 uid="uid://civpyvmpxycru"]
 
 [ext_resource type="Script" path="res://Mnozenie_poziomy/wybor_poziomu_mnoz/Wybor_poziomu_mnoz.gd" id="1_sn8ua"]
-[ext_resource type="Texture2D" uid="uid://dnoj6w7dvdl2i" path="res://placeholdery/poziom2.png" id="2_7kn15"]
-[ext_resource type="Texture2D" uid="uid://dj815t4w2hrbu" path="res://buttons-20240602T142656Z-001/placeholdery/guzikpoziomu.png" id="3_asmhr"]
+[ext_resource type="Texture2D" uid="uid://crfob3latyr8q" path="res://Map/m2.png" id="2_3wjag"]
+[ext_resource type="Texture2D" uid="uid://ci14unrep0wvr" path="res://Map/lv1.png" id="3_vgg3h"]
 [ext_resource type="Texture2D" uid="uid://bnaiwy2alab5o" path="res://buttons-20240602T142656Z-001/placeholdery/poziom zablokowany.png" id="4_nyvlm"]
 [ext_resource type="Script" path="res://Mnozenie_poziomy/wybor_poziomu_mnoz/1_mnoz.gd" id="5_y7whp"]
+[ext_resource type="Texture2D" uid="uid://dc432qlbrsixl" path="res://Map/lv2.png" id="6_0oprj"]
 [ext_resource type="Script" path="res://Mnozenie_poziomy/wybor_poziomu_mnoz/2_mnoz.gd" id="6_1v2uq"]
 [ext_resource type="Script" path="res://Mnozenie_poziomy/wybor_poziomu_mnoz/3_mnoz.gd" id="7_7toss"]
+[ext_resource type="Texture2D" uid="uid://nifdwn5ao581" path="res://Map/lv2lc.png" id="7_p76ar"]
 [ext_resource type="Texture2D" uid="uid://k1jn5mykeegn" path="res://buttons-20240602T142656Z-001/buttons/Close_button.png" id="8_18kvj"]
+[ext_resource type="Texture2D" uid="uid://cys0dwopboqsm" path="res://Map/lv3.png" id="9_313vm"]
 [ext_resource type="Script" path="res://Mnozenie_poziomy/wybor_poziomu_mnoz/exit_mnoz.gd" id="9_b7oa4"]
+[ext_resource type="Texture2D" uid="uid://cvex8ldwkb0pr" path="res://Map/lv3lc.png" id="10_npgvu"]
+[ext_resource type="Texture2D" uid="uid://oyk5ch2mtadn" path="res://Map/house.png" id="14_44pu8"]
+[ext_resource type="Texture2D" uid="uid://cjetdoy436awj" path="res://Map/forest.png" id="15_g6ivo"]
+[ext_resource type="Texture2D" uid="uid://kjhn4grut7vp" path="res://Map/lake.png" id="16_d4l6o"]
 
 [node name="WyborPoziomu" type="Control"]
 layout_mode = 3
@@ -24,41 +31,42 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(28.9223, 16.4899)
-texture = ExtResource("2_7kn15")
+texture = ExtResource("2_3wjag")
 expand_mode = 1
+flip_h = true
 
 [node name="1" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 108.0
-offset_top = 222.0
-offset_right = 324.0
-offset_bottom = 351.0
+offset_left = 122.0
+offset_top = 126.0
+offset_right = 338.0
+offset_bottom = 255.0
 scale = Vector2(0.42622, 0.48674)
-texture_normal = ExtResource("3_asmhr")
+texture_normal = ExtResource("3_vgg3h")
 texture_disabled = ExtResource("4_nyvlm")
 ignore_texture_size = true
 script = ExtResource("5_y7whp")
 
 [node name="2" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 416.0
-offset_top = 424.0
-offset_right = 626.0
-offset_bottom = 557.0
+offset_left = 422.0
+offset_top = 229.0
+offset_right = 632.0
+offset_bottom = 362.0
 scale = Vector2(0.396288, 0.482283)
-texture_normal = ExtResource("3_asmhr")
-texture_disabled = ExtResource("4_nyvlm")
+texture_normal = ExtResource("6_0oprj")
+texture_disabled = ExtResource("7_p76ar")
 script = ExtResource("6_1v2uq")
 
 [node name="3" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 725.0
-offset_top = 386.0
-offset_right = 935.0
-offset_bottom = 519.0
+offset_left = 722.0
+offset_top = 274.0
+offset_right = 932.0
+offset_bottom = 407.0
 scale = Vector2(0.496848, 0.504887)
-texture_normal = ExtResource("3_asmhr")
-texture_disabled = ExtResource("4_nyvlm")
+texture_normal = ExtResource("9_313vm")
+texture_disabled = ExtResource("10_npgvu")
 script = ExtResource("7_7toss")
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -70,6 +78,33 @@ offset_bottom = 281.0
 scale = Vector2(0.213348, 0.184168)
 texture_normal = ExtResource("8_18kvj")
 script = ExtResource("9_b7oa4")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 317.0
+offset_top = 341.0
+offset_right = 627.0
+offset_bottom = 704.0
+scale = Vector2(0.947042, 0.880193)
+texture = ExtResource("14_44pu8")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -160.0
+offset_top = 230.0
+offset_right = 97.0
+offset_bottom = 449.0
+scale = Vector2(1.49873, 1.44971)
+texture = ExtResource("15_g6ivo")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 500.0
+offset_right = 1315.0
+offset_bottom = 840.0
+scale = Vector2(0.584839, 0.473601)
+texture = ExtResource("16_d4l6o")
 
 [connection signal="pressed" from="1" to="1" method="_on_pressed"]
 [connection signal="pressed" from="2" to="2" method="_on_pressed"]

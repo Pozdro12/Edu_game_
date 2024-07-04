@@ -1,14 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://bl73d5gp6v1f0"]
+[gd_scene load_steps=15 format=3 uid="uid://bl73d5gp6v1f0"]
 
 [ext_resource type="Script" path="res://wybor_poziomu_uzu/Wybor_poziomu_ktoregos.gd" id="1_1wdh4"]
-[ext_resource type="Texture2D" uid="uid://dnoj6w7dvdl2i" path="res://placeholdery/poziom2.png" id="2_ewg4e"]
-[ext_resource type="Texture2D" uid="uid://dj815t4w2hrbu" path="res://buttons-20240602T142656Z-001/placeholdery/guzikpoziomu.png" id="3_odfqn"]
-[ext_resource type="Texture2D" uid="uid://bnaiwy2alab5o" path="res://buttons-20240602T142656Z-001/placeholdery/poziom zablokowany.png" id="4_43rv8"]
-[ext_resource type="Script" path="res://wybor_poziomu_uzu/1.gd" id="5_as68f"]
+[ext_resource type="Texture2D" uid="uid://crfob3latyr8q" path="res://Map/m2.png" id="2_gcspr"]
+[ext_resource type="Texture2D" uid="uid://ci14unrep0wvr" path="res://Map/lv1.png" id="3_2igll"]
+[ext_resource type="Script" path="res://wybor_poziomu_uzu/4.gd" id="4_q57kk"]
 [ext_resource type="Script" path="res://wybor_poziomu_uzu/2.gd" id="6_5xac3"]
+[ext_resource type="Texture2D" uid="uid://dc432qlbrsixl" path="res://Map/lv2.png" id="6_jr1ja"]
 [ext_resource type="Script" path="res://wybor_poziomu_uzu/3.gd" id="7_4j8ix"]
+[ext_resource type="Texture2D" uid="uid://nifdwn5ao581" path="res://Map/lv2lc.png" id="7_x1xms"]
 [ext_resource type="Texture2D" uid="uid://k1jn5mykeegn" path="res://buttons-20240602T142656Z-001/buttons/Close_button.png" id="8_o5r7j"]
 [ext_resource type="Script" path="res://wybor_poziomu_uzu/exit_uzu.gd" id="9_1no3e"]
+[ext_resource type="Texture2D" uid="uid://cys0dwopboqsm" path="res://Map/lv3.png" id="9_5wska"]
+[ext_resource type="Texture2D" uid="uid://cvex8ldwkb0pr" path="res://Map/lv3lc.png" id="10_6y2rg"]
+[ext_resource type="Texture2D" uid="uid://oyk5ch2mtadn" path="res://Map/house.png" id="13_ipd45"]
+[ext_resource type="Texture2D" uid="uid://kjhn4grut7vp" path="res://Map/lake.png" id="14_jfikj"]
 
 [node name="WyborPoziomu" type="Control"]
 layout_mode = 3
@@ -24,20 +29,18 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(28.9223, 16.4899)
-texture = ExtResource("2_ewg4e")
+texture = ExtResource("2_gcspr")
 expand_mode = 1
 
-[node name="1" type="TextureButton" parent="."]
+[node name="4" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 179.0
-offset_top = 498.0
-offset_right = 395.0
-offset_bottom = 627.0
-scale = Vector2(0.42622, 0.48674)
-texture_normal = ExtResource("3_odfqn")
-texture_disabled = ExtResource("4_43rv8")
-ignore_texture_size = true
-script = ExtResource("5_as68f")
+offset_left = 259.0
+offset_top = 414.0
+offset_right = 447.0
+offset_bottom = 586.0
+scale = Vector2(0.720128, 0.759829)
+texture_normal = ExtResource("3_2igll")
+script = ExtResource("4_q57kk")
 
 [node name="2" type="TextureButton" parent="."]
 layout_mode = 0
@@ -45,20 +48,20 @@ offset_left = 396.0
 offset_top = 219.0
 offset_right = 606.0
 offset_bottom = 352.0
-scale = Vector2(0.396288, 0.482283)
-texture_normal = ExtResource("3_odfqn")
-texture_disabled = ExtResource("4_43rv8")
+scale = Vector2(0.507424, 0.587193)
+texture_normal = ExtResource("6_jr1ja")
+texture_disabled = ExtResource("7_x1xms")
 script = ExtResource("6_5xac3")
 
 [node name="3" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 725.0
-offset_top = 386.0
-offset_right = 935.0
-offset_bottom = 519.0
+offset_left = 709.0
+offset_top = 457.0
+offset_right = 919.0
+offset_bottom = 610.0
 scale = Vector2(0.496848, 0.504887)
-texture_normal = ExtResource("3_odfqn")
-texture_disabled = ExtResource("4_43rv8")
+texture_normal = ExtResource("9_5wska")
+texture_disabled = ExtResource("10_6y2rg")
 script = ExtResource("7_4j8ix")
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -71,7 +74,25 @@ scale = Vector2(0.213348, 0.184168)
 texture_normal = ExtResource("8_o5r7j")
 script = ExtResource("9_1no3e")
 
-[connection signal="pressed" from="1" to="1" method="_on_pressed"]
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 703.0
+offset_top = 22.0
+offset_right = 1013.0
+offset_bottom = 385.0
+scale = Vector2(0.843626, 0.689936)
+texture = ExtResource("13_ipd45")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 260.0
+offset_right = 1532.0
+offset_bottom = 600.0
+scale = Vector2(0.613628, 0.580052)
+texture = ExtResource("14_jfikj")
+
+[connection signal="pressed" from="4" to="4" method="_on_pressed"]
 [connection signal="pressed" from="2" to="2" method="_on_pressed"]
 [connection signal="pressed" from="3" to="3" method="_on_pressed"]
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

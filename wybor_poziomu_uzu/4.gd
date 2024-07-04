@@ -12,4 +12,4 @@ func _process(delta):
 
 
 func _on_pressed():
-	print("pozdro")
+	get_tree().change_scene_to_file("res://Fill_poziomy/fillx_poziom1/fillx_p1.tscn")

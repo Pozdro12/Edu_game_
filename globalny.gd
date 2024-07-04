@@ -1,5 +1,5 @@
 extends Node
-
+var zapisywanie=false
 var save_path="user://variable.save"
 
 var poziom1_dodawanie=true
@@ -28,20 +28,21 @@ var uzupelnianie_ukonczone=false
 var geom_ukoncz=false
 
 func save():
-	var file = FileAccess.open(save_path, FileAccess.WRITE)
-	file.store_var(poziom1_mnozenie)
-	file.store_var(poziom2_mnozenie)
-	file.store_var(poziom3_mnozenie)
-	file.store_var(mnozenie_ukonczone)
-	file.store_var(poziom1_dzielenie)
-	file.store_var(poziom2_dzielenie)
-	file.store_var(poziom3_dzielenie)
-	file.store_var(dzielenie_ukonczone)
-	file.store_var(poziom1_uzupelnianie)
-	file.store_var(poziom2_uzupelnianie)
-	file.store_var(poziom3_uzupelnianie)
-	file.store_var(uzupelnianie_ukonczone)
-	file.store_var(geom_ukoncz)
+	if zapisywanie==true:
+		var file = FileAccess.open(save_path, FileAccess.WRITE)
+		file.store_var(poziom1_mnozenie)
+		file.store_var(poziom2_mnozenie)
+		file.store_var(poziom3_mnozenie)
+		file.store_var(mnozenie_ukonczone)
+		file.store_var(poziom1_dzielenie)
+		file.store_var(poziom2_dzielenie)
+		file.store_var(poziom3_dzielenie)
+		file.store_var(dzielenie_ukonczone)
+		file.store_var(poziom1_uzupelnianie)
+		file.store_var(poziom2_uzupelnianie)
+		file.store_var(poziom3_uzupelnianie)
+		file.store_var(uzupelnianie_ukonczone)
+		file.store_var(geom_ukoncz)
 	
 func load_data():
 	if FileAccess.file_exists(save_path):
